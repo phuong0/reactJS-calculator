@@ -1,19 +1,36 @@
 import "./styles.css";
-import React from "react";
-import Screen from "./screen.js";
+import React, { useState } from "react";
 import Button from "./buttons.js";
+import Screen from "./screen.js";
 
 export default function App() {
   //state keeping track of input
-  //math(calculate): array(pop/push)
   //state keeping track of output
-  let currentNum = "";
+  let currentInput = "";
   let IsNum = false;
+
+  let [inputString, setNewInput] = useState(currentInput);
+  const newInput = (label) => {
+    //33 or 3 3
+    //change currentInput to something
+    setNewInput(currentInput + label);
+  };
+
+  let [outputString, setNewOutput] = useState("");
+  const newOutput = (label) => {
+    setNewInput("");
+    setNewOutput(calculate(inputString));
+  };
+
+  const calculate = (input, output) => {
+    //test if the input is an actually expression
+    output = eval(input);
+  };
 
   return (
     <div className="App">
       <div>
-        <Screen />
+        <Screen input={""} output={""} />
         <div>
           <Button label={"Clear"} />
           <Button label={"Delete"} />
