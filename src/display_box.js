@@ -2,7 +2,7 @@ import React from "react";
 
 function DisplayBox(props) {
   return (
-    <div>
+    <div class="display-row">
       <input type="text" readOnly value={props.value} />
     </div>
   );

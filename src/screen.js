@@ -3,7 +3,7 @@ import DisplayBox from "./display_box.js";
 
 function Screen(props) {
   return (
-    <div>
+    <div id="screen">
       <DisplayBox value={props.input} />
       <DisplayBox value={props.output} />
     </div>

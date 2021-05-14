@@ -2,3 +2,75 @@
   font-family: sans-serif;
   text-align: center;
 }
+
+* {
+  margin: 0px;
+  padding: 0px;
+  border-radius: 0px;
+  box-sizing: border-box;
+  font-size: 110%;
+}
+
+#title {
+  font-size: 30px;
+  background: #fff;
+  width: 400px;
+  padding: 10px 10px;
+  margin: 0 auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border: 2px solid black;
+  border-radius: 15px 50px 30px;
+  color: #208aae;
+}
+
+#calc-body {
+  margin: 0px;
+  padding: 0px;
+  border-radius: 0px;
+  box-sizing: border-box;
+}
+
+.display-row input {
+  width: 400px;
+  background: #ddd;
+  border: 0px;
+  color: #222;
+  padding: 10px;
+  text-align: right;
+}
+
+input[type="button"] {
+  width: 100px;
+  border: 1px solid #222;
+  padding: 10px 20px;
+  color: black;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+.nums {
+  background: #208aae;
+}
+
+.mistake {
+  background: #873d48;
+}
+
+.operators {
+  background: #a2e3c4;
+}
+
+.equal {
+  background: #f0f7f4;
+}
+
+input[type="button"]:active {
+  background: #ccc;
+}
+
+input[type="button"]:active {
+  background: #ccc;
+}

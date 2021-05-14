@@ -2,7 +2,14 @@
 import React from "react";
 
 function Button(props) {
-  return <input type="button" value={props.label} />;
+  return (
+    <input
+      class={props.class}
+      type="button"
+      value={props.label}
+      onClick={props.clicked}
+    />
+  );
 }
 
 export default Button;

@@ -4,60 +4,78 @@ import Button from "./buttons.js";
 import Screen from "./screen.js";
 
 export default function App() {
-  //state keeping track of input
-  //state keeping track of output
-  let currentInput = "";
-  let IsNum = false;
+  //strings not adding together right
+  let [inputString, setNewInput] = useState("");
+  const eachInput = (label) => {
+    setNewInput(inputString + label);
+  };
 
-  let [inputString, setNewInput] = useState(currentInput);
-  const newInput = (label) => {
-    //33 or 3 3
-    //change currentInput to something
-    setNewInput(currentInput + label);
+  const deleteInput = () => {
+    if (inputString !== "") {
+      setNewInput(inputString.slice(0, -1));
+    }
+  };
+  const clearInput = () => {
+    setNewInput("");
   };
 
   let [outputString, setNewOutput] = useState("");
-  const newOutput = (label) => {
+  const newOutput = () => {
+    setNewOutput(eval(inputString));
     setNewInput("");
-    setNewOutput(calculate(inputString));
   };
 
-  const calculate = (input, output) => {
-    //test if the input is an actually expression
-    output = eval(input);
-  };
-
+  //need to add the labels to the function each input
   return (
     <div className="App">
       <div>
-        <Screen input={""} output={""} />
-        <div>
-          <Button label={"Clear"} />
-          <Button label={"Delete"} />
-          <Button label={"."} />
-          <Button label={"/"} />
-        </div>
-        <div>
-          <Button label={"7"} />
-          <Button label={"8"} />
-          <Button label={"9"} />
-          <Button label={"*"} />
-        </div>
-        <div>
-          <Button label={"4"} />
-          <Button label={"5"} />
-          <Button label={"6"} />
-          <Button label={"-"} />
-        </div>
-        <div>
-          <Button label={"1"} />
-          <Button label={"2"} />
-          <Button label={"3"} />
-          <Button label={"+"} />
-        </div>
-        <div>
-          <Button label={"0"} />
-          <Button label={"="} />
+        <h1 id="title">Phuong's Basic Calculator</h1>
+        <Screen input={inputString} output={outputString} />
+        <div id="calc-body">
+          <div>
+            <Button class="mistake" label={"Clear"} clicked={clearInput} />
+            <Button class="mistake" label={"Delete"} clicked={deleteInput} />
+            <Button
+              class="operators"
+              label={"."}
+              clicked={() => eachInput(".")}
+            />
+            <Button
+              class="operators"
+              label={"/"}
+              clicked={() => eachInput("/")}
+            />
+          </div>
+          <div>
+            <Button class="nums" label={"7"} clicked={() => eachInput("7")} />
+            <Button class="nums" label={"8"} clicked={() => eachInput("8")} />
+            <Button class="nums" label={"9"} clicked={() => eachInput("9")} />
+            <Button class="nums" label={"*"} clicked={() => eachInput("*")} />
+          </div>
+          <div>
+            <Button class="nums" label={"4"} clicked={() => eachInput("4")} />
+            <Button class="nums" label={"5"} clicked={() => eachInput("5")} />
+            <Button class="nums" label={"6"} clicked={() => eachInput("6")} />
+            <Button
+              class="operators"
+              label={"-"}
+              clicked={() => eachInput("-")}
+            />
+          </div>
+          <div>
+            <Button class="nums" label={"1"} clicked={() => eachInput("1")} />
+            <Button class="nums" label={"2"} clicked={() => eachInput("2")} />
+            <Button class="nums" label={"3"} clicked={() => eachInput("3")} />
+            <Button
+              class="operators"
+              label={"+"}
+              clicked={() => eachInput("+")}
+            />
+          </div>
+          <div>
+            <Button class="nums" label={"0"} clicked={() => eachInput("0")} />
+            <Button class="equal" label={"="} clicked={newOutput} />
+          </div>
         </div>
       </div>
     </div>
