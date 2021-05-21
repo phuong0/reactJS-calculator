@@ -4,7 +4,7 @@ import React from "react";
 function Button(props) {
   return (
     <input
-      class={props.class}
+      className={props.class}
       type="button"
       value={props.label}
       onClick={props.clicked}
