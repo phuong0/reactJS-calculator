@@ -39,6 +39,28 @@ export default function App() {
               <Button class="mistake" label={"Delete"} clicked={deleteInput} />
               <Button
                 class="operators"
+                label={"%"}
+                clicked={() => eachInput("%")}
+              />
+              <Button
+                class="operators"
+                label={"^"}
+                clicked={() => eachInput("**")}
+              />
+            </div>
+            <div>
+              <Button
+                class="nums"
+                label={"π"}
+                clicked={() => eachInput(Math.PI)}
+              />
+              <Button
+                class="nums"
+                label={"e"}
+                clicked={() => eachInput(Math.E)}
+              />
+              <Button
+                class="operators"
                 label={"."}
                 clicked={() => eachInput(".")}
               />
