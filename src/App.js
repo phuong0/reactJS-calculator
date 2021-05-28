@@ -30,7 +30,7 @@ export default function App() {
   return (
     <div className="App">
       <div>
-        <h1 id="title">Phuong's Basic Calculator</h1>
+        <h1 id="title">Phuong's Advance Calculator</h1>
         <div id="calc-whole">
           <Screen input={inputString} output={outputString} />
           <div id="calc-body">
